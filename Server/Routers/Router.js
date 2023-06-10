@@ -44,7 +44,7 @@ routes.post("/login", async (req,res)=>{
    
     const pass =  await userschema.findOne({Email:req.body.email})
     
-  // const check  =  //await bcyp.compare(req.body.password, pass.password)
+   const check  =  //await bcyp.compare(req.body.password, pass.password)
     console.log(req.body)
     console.log(pass.password)
     
