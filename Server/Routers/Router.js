@@ -171,7 +171,7 @@ routes.get("/:id/followers",async (req,res)=>{
     
       })
     }else{
-       res.status(200).json(["hi"])
+       res.status(200).json([])
     }
   
 
