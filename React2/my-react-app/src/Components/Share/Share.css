@@ -1,0 +1,133 @@
+.shareProfileimg{
+
+    width: 50px;
+    height: 50px;
+}
+
+.shareWrapper{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+
+}
+.shareBottom{
+
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.shareTop{
+   
+     width: 70%;
+     height: 10vh;
+    
+     
+}
+.shareOptions{
+   
+    display: flex;
+    
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+
+    
+    
+
+}
+.shareButtonx{
+     
+     border: none;
+     padding: 5px;
+    background-color: gray;
+     cursor: pointer;
+     border-radius: 3px;
+     background-color:green;
+     font-weight: 500;
+     color: rgb(255, 255, 255);
+     
+   
+}
+
+.shareButtonx:hover{
+
+    padding: 6px;
+}
+
+
+.shareButton{
+    margin-left: 15% ;
+    border: none;
+    
+    
+  
+}
+
+
+.shareMessage{
+    color:orange;
+}
+.shareInput{
+  
+    width:80%;
+    height:6vh;
+    border: none;
+
+    
+}
+.shareIcon{
+
+    color: rgb(36, 216, 0)
+}
+.shareoptionText{
+
+ cursor: pointer;
+}
+
+.shareoptionText:hover{
+    border-style: solid;
+    border-color: blue;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    transition: 0.5;
+}
+.shareoption{
+   
+    display: flex;
+    align-items: center;
+    gap:3px;
+    font-size: 14px;
+    
+
+}
+.shareEmoji{
+    color: red;
+    font-size: x-small;
+    cursor: pointer;
+    
+}
+.shareTelegram{
+    color: blue;
+
+    cursor: pointer;
+}
+
+.shareInput:focus{
+    outline: none;
+}
+
+.shareTopcontainer{
+   
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.shareProfileimg{
+    border-radius: 50%;
+
+}

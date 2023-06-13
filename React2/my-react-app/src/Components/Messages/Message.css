@@ -1,0 +1,47 @@
+.MessageContainerTop{
+    display: flex;
+    align-items: center;
+    
+    color: white;
+    height: fit-content;
+    
+    gap:15px
+}
+
+.MessageContainer.own{
+   align-self: end;
+   display: flex;
+   align-items:flex-end;
+   flex-direction: column;
+   
+}
+.MessageContainer{
+    padding: 0px;
+    
+    
+    height: fit-content;
+
+    max-width: 300px;
+    border-radius: 10%;
+    width: fit-content;
+    padding: 6px;
+}
+
+
+.MessageImage{
+    border-radius: 50%;
+
+}
+.message_text{
+    padding: 8px;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: blue;
+    
+}
+
+.MessageContainer.own .message_text{
+
+    background-color: aliceblue;
+    color: black;
+}

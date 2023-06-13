@@ -1,0 +1,42 @@
+.profilecontainerWrapper{
+
+    flex:7;
+    
+    
+}
+
+.profileText{
+ margin-top: 64px;
+ margin-left: 40.40%;
+ line-height: 4px;
+
+}
+.Profilefeedandrightbar{
+
+    display: flex;
+    margin-top: 60px;
+}
+
+.Profileimg{
+   position: absolute;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    top:76%;
+    left:40%;
+    border-width: 5px;
+    border-color: greenyellow;
+    border-style: solid;
+}
+.Image{
+
+   height: 40vh;
+   width:100%;
+}
+
+.ImageContainer{
+position: relative;
+  height: 40vh;
+    width: 100%;
+    background-color: yellow;
+}

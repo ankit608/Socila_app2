@@ -1,0 +1,92 @@
+.Slidebarcss{
+     height: calc(100vh - 50px); 
+      flex: 2; 
+     
+     overflow-y: scroll;  
+     position: sticky;
+     top: 50px;
+    
+}
+.sidebarListItem{
+    display: flex;
+    align-items: center;
+    gap:5%;
+    
+    padding: 5px;
+    
+}
+.sidebarListitemText{
+    cursor: pointer;
+     }
+
+    .sidebarListitemText:hover{
+
+        border-style: solid;
+     border-color: blue;
+     border-left: none;
+     border-right: none;
+     border-top: none;
+     transition: 0.5;
+    }
+
+.sidebarWrapper{
+    padding: 20px;
+    
+}
+.sidebarFriendList{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+
+}
+.sidebarFriend{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    gap: 20px;
+    box-shadow: 	0px 11px 6px -8px rgba(0,0,0,0.4);
+border:	1px solid rgba(0,0,0,0.14);
+border-radius:	10px;
+margin-top: 10px;
+
+
+}
+ 
+.Active{
+    
+    height: 5px;
+    width:5px;
+    border-radius: 50%;
+    background-color: rgb(92, 243, 92);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+background-color: rgb(231, 226, 226)
+
+}
+
+ ::-webkit-scrollbar-thumb{
+
+    background-color: gray;
+ }
+.sidebarFriendImage{
+
+    border-radius: 50%;     
+    height:30px;
+    width:30px;
+}
+.Button_show{
+   
+   margin-top: 14px;    
+}
+
+.sidebarList{
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
