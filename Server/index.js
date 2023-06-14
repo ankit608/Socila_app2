@@ -82,6 +82,28 @@ mongoose.connect("mongodb+srv://ankit:Ankit123@NodeExpresprojects.ppv1c.mongodb.
 app.use("/images",express.static(path.join(__dirname,"public/images")))
 
 
+
+app.post("/upload/profile",upload.single('file'),async (req,res)=>{
+
+    try{
+        if(req.file){
+            const a = await uploadToS3(req.file.buffer)
+           
+            console.log("location",a.Location)
+            res.status(200).json(a.Location)
+     }else{
+        
+        res.status.json("file not exist")
+     }
+    }catch(error){
+          
+        console.log(error)
+    
+    }
+
+})
+
+
 app.post("/upload", upload.single('file'),(async(req,res)=>{
 
     const a = await Post.deleteMany({img: null})

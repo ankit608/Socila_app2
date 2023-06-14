@@ -54,6 +54,7 @@ return(
   <div className="chat_menu">
     <div className="Chat_menu_Wrapper">
      <input className="searchFriend" placeholder="Search your friend" ></input>
+     
       {conversation.map((a)=>{
         
         return (

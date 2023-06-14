@@ -30,7 +30,7 @@ const schema = new mongoose1.Schema({
     },
     profilepic:{
      type:String,
-
+     default:"/Assets/Avatar.jpg"
     },
 
     following:{

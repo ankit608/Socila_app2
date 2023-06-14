@@ -5,6 +5,10 @@
     
 }
 
+.profile_pic{
+
+    border-radius: 50%;
+}
 .profileText{
  margin-top: 64px;
  margin-left: 40.40%;

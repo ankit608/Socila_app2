@@ -58,7 +58,7 @@ import { Authcontext } from '../Context/AuthContext'
       </div>
      </div>
     <Link to= {`/profile/${user.User}`}> 
-    <img src={user.coverpicture} alt='' className='topbarImage'></img>
+    <img src={user.profilepic} alt='' className='topbarImage'></img>
     </Link>
     
   </div>

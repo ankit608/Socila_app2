@@ -215,6 +215,23 @@ if(req.params.id !== req.body.id){
 
 })
 
+routes.put("/update/profile",async (req,res)=>{
+   
+   console.log(req.body)
+   try {
+      const user = await userschema.findById(req.body.user_id)
+      console.log(user,"hfshfjs")
+      const v = await user.updateOne({"profilepic":req.body.profilepic})
+      console.log("sfsfs",v)
+      
+      res.status(200).json("uploaded")
+     
+
+   } catch (error) {
+      res.send(500).json("not uploaded")
+   }
+})
+
 
 
 
