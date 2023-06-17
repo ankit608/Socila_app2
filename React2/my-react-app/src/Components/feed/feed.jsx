@@ -20,8 +20,8 @@ export default function Feed({username},{USERNAME}){
        
       
         console.log("username:",username)
-       const  res = username ?  await axios(`http://localhost:8080/service/Posts/profile/${username._id}`)
-      :await axios(`http://localhost:8080/service/Posts/timeline/${user._id}`)
+       const  res = username ?  await axios(`http://18.204.18.253:3001/service/Posts/profile/${username._id}`)
+      :await axios(`http://18.204.18.253:3001/service/Posts/timeline/${user._id}`)
       setpost(res.data)
       console.log("feed component",res.data)
       

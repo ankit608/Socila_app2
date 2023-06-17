@@ -17,7 +17,7 @@ export default  function Rightbar( {User}){
     const followhandler = async ()=>{
       
       console.log("Usersss:",User.User)
-      const a = await axios.put(`http://localhost:8080/service/${User._id}/follow`,{id:user._id})
+      const a = await axios.put(`http://18.204.18.253:3001/service/${User._id}/follow`,{id:user._id})
        
       setIsfollowed(!Isfollowed)
 
@@ -36,7 +36,7 @@ export default  function Rightbar( {User}){
           
 
           setIsfollowed(User.following.includes(user._id))
-          const a = await axios.get(`http://localhost:8080/service/${User._id}/followers`)
+          const a = await axios.get(`http://18.204.18.253:3001/service/${User._id}/followers`)
            console.log("aaa" +" "+User.User,a)
            console.log("Usersss:",User)
           setData(a.data)

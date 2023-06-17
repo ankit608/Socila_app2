@@ -11,7 +11,7 @@ export default  function Profile(){
   
   const params = useParams()
   console.log("fsdfsdfsdfsdf",params)
-  var st = `http://localhost:8080/service?username=${params.username}`
+  var st = `http://18.204.18.253:3001/service?username=${params.username}`
          
   useEffect(()=>{
      console.log("Againnnnn")

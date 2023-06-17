@@ -15,7 +15,7 @@ export default function Post(post){
 
 
 
-           var st = `http://localhost:8080/service?userid=${post.data.UserId}`
+           var st = `http://18.204.18.253:3001/service?userid=${post.data.UserId}`
            
          
           useEffect(()=>{
@@ -44,7 +44,7 @@ export default function Post(post){
       const likeHandler = ()=>{
         console.log(isliked)
        var a = post.data._id
-        var sat = "http://localhost:8080/service/Posts/" + a+"/likes"
+        var sat = "http://18.204.18.253:3001/service/Posts/" + a+"/likes"
         
           axios.put(sat,{
             "User_Id": user._id

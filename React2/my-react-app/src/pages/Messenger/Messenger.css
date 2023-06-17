@@ -46,7 +46,12 @@
 
     outline: none;
 }
+.Search_box{
 
+    display: flex;
+    align-items: center;
+
+}
 .Chat_menu_friend{
 
   display: flex;
@@ -116,4 +121,12 @@ outline: none;
    flex-direction: column;
 
 
+}
+.listcontainer{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
 }

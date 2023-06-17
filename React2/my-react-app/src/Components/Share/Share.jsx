@@ -31,7 +31,7 @@ const sharehandler =async (e) =>{
     
 
     try {
-    const res = await axios.post("http://localhost:8080/upload",data, { headers: {'Content-Type': 'multipart/form-data'}})
+    const res = await axios.post("http://18.204.18.253:3001/upload",data, { headers: {'Content-Type': 'multipart/form-data'}})
       console.log("response",res)
        newPost.img = res.data
        
@@ -46,7 +46,7 @@ const sharehandler =async (e) =>{
   try{
  
    if(file){
-      const res = await axios.post("http://localhost:8080/service/Posts/",newPost)
+      const res = await axios.post("http://18.204.18.253:3001/service/Posts/",newPost)
    }
   
 

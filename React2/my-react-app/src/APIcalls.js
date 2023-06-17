@@ -6,10 +6,10 @@ export const Login_CAll = async (usercredentials,dispatch)=>{
   
   try{
     
-  var st = `http://localhost:8080/service/login`
+  var st = `http://18.204.18.253:3001/service/login`
 
   
-   res = await axios.post("http://localhost:8080/service/login",usercredentials) 
+   res = await axios.post("http://18.204.18.253:3001/service/login",usercredentials) 
    
    setTimeout(()=>{
     dispatch({type:"LOGIN_SUCCESS", payload:res.data})

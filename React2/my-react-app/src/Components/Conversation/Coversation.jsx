@@ -15,7 +15,7 @@ export default function Conversation({chatHandler, conversation , currentuser}){
         
         
         const getUser = async () =>{
-         const friend = await axios.get("http://localhost:8080/service?userid="+userFriend)
+         const friend = await axios.get("http://18.204.18.253:3001/service?userid="+userFriend)
          console.log("friend",friend.data)
          setfriend(friend.data)
         }

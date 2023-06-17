@@ -12,14 +12,14 @@ export default function Chat({Currentchat , conversation}){
     const[Msg,setMsg] = usestate([])
     const {user} = useContext(Authcontext)
     const socket = useRef()
-    console.log("chaooooo",Currentchat.members)
+    
    useEffect(()=>{
    if(conversation.length >=1){
      console.log("count")
-    socket.current = io("ws://localhost:8890")
+    socket.current = io("ws://18.204.18.253:8890")
    }
    
-   
+  
   },[])
 
    useEffect(()=>{
@@ -58,7 +58,7 @@ export default function Chat({Currentchat , conversation}){
     
     const text_ref = useRef()
     const SaveMessages = async (data)=>{
-       const a =  await axios.post("http://localhost:8080/service/Conversation",data)
+       const a =  await axios.post("http://18.204.18.253:3001/service/Conversation",data)
        console.log(a,"aaaa")
     }
 
@@ -68,7 +68,7 @@ export default function Chat({Currentchat , conversation}){
 
         
         const fetch_messages = async () =>{
-            const  abc = await axios.get("http://localhost:8080/service/Conversation/conver/"+Currentchat._id)
+            const  abc = await axios.get("http://18.204.18.253:3001/service/Conversation/conver/"+Currentchat._id)
             console.log("useEffect",Msg.data)
             
             setMsg(abc.data)

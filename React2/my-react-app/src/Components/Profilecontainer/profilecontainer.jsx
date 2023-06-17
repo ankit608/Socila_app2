@@ -24,9 +24,9 @@ export default function ProfileContainer({User}){
      data.append("filename",filename)
 
      try {
-        const a =  await axios.post("http://localhost:8080/upload/profile",data, { headers: {'Content-Type': 'multipart/form-data'}})
+        const a =  await axios.post("http://18.204.18.253:3001/upload/profile",data, { headers: {'Content-Type': 'multipart/form-data'}})
                    
-                  await axios.put("http://localhost:8080/service/update/profile",{"user_id":User._id,"profilepic":a.data})
+                  await axios.put("http://18.204.18.253:3001/service/update/profile",{"user_id":User._id,"profilepic":a.data})
        setpropic(a.data)
     
                 } catch (error) {
