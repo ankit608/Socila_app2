@@ -70,8 +70,8 @@ const Email = UseRef()
               <input className="LoginInput" placeholder="Email" ref={Email} required></input>
               <input className="LoginInput" placeholder="Password" type="password" ref={password} required></input>
               <input className="LoginInput" placeholder=" Confirm Password" type="password" ref={Confirm_password}required></input>
-              <button  type="submit" className="Login-Button">{state?<CircularProgress size={20} color="white"></CircularProgress>:"log In"}</button>
-              <button className="Create-Account">LogIn to an Account</button>
+              <button  type="submit" className="Login-Button" >{state?<CircularProgress size={20} color="white"></CircularProgress>:"log In"}</button>
+              <button className="Create-Account" onClick={()=>{ Navigate("/login")}}>LogIn to an Account</button>
             </form>
           </div>
 

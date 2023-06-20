@@ -3,10 +3,11 @@ import "./Login.css"
 import {Login_CAll} from "../../APIcalls"
 import { Authcontext } from "../../Context/AuthContext"
 import { CircularProgress } from "@material-ui/core"
+import {Link, useNavigate} from "react-router-dom"
 export default function Login(){
 
   const{user,Isfetching,error, dispatch}  = useContext(Authcontext)
-
+  const Navigate = useNavigate()
   const password = useRef()
   const Email =  useRef()
 const handleClick = (e)=>{
@@ -38,7 +39,12 @@ const handleClick = (e)=>{
               ></input>
               <button className="Login-Button" type="submit">{Isfetching?<div><span>loading...</span><CircularProgress color="white" size={20}></CircularProgress></div>:"log In"}</button>
               <span className="Login-pass"> Forget Password?</span>
-              <button className="Create-Account">{Isfetching?<div><span>loading...</span><CircularProgress color="white" size={20}></CircularProgress></div>:"create new account"}</button>
+              
+              <button className="Create-Account" onClick={()=>{
+                 Navigate("/register")
+              }}>{Isfetching?<div><span>loading...</span><CircularProgress color="white" size={20}></CircularProgress></div>:"create new account"}</button>
+              
+              
                <div className="invalid_user">{error?<span>invalid_user</span>:""}</div>
             </form>
           </div>
