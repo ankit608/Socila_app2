@@ -18,7 +18,7 @@ export default function Messenger(){
      const [Currentchat,setCurrentchat] = usestate(null)
      const[conversation, setConversation] = usestate([])
      const[messages,setmessages] = usestate()
-    const {user} = usecontext(Authcontext)
+    const {user,IP} = usecontext(Authcontext)
 
     
 
@@ -27,7 +27,7 @@ useEffect(()=>{
     const getAllconv = async () =>{
         try{
             console.log("hellooo")
-            const response = await axios.get("http://18.204.18.253:3001/service/Conversation/"+user._id)
+            const response = await axios.get(`${IP}3001/service/Conversation/`+user._id)
             console.log("getAll",response.data)
             setConversation(response.data)
           
@@ -59,7 +59,7 @@ return(
      <Search className='Search_icon' style={{"cursor":"pointer"} } onClick={async ()=>{
        const a = document.getElementsByClassName("searchFriend")
        
-       const friend  = await axios.get("http://18.204.18.253:3001/service?username="+a[0].value)
+       const friend  = await axios.get(`${IP}3001/service?username=`+a[0].value)
       
        setsearchlist(friend.data)
 

@@ -9,13 +9,14 @@ import { useContext } from "react"
 import { Authcontext } from "../../Context/AuthContext"
 export default function Post(post){
      
-    const {user} = useContext(Authcontext)
+    const {user,IP} = useContext(Authcontext)
+    console.log("poooooost...IP",IP)
     const[userData,setData] = useState({});
 
 
 
 
-           var st = `http://18.204.18.253:3001/service?userid=${post.data.UserId}`
+           var st = `${IP}:3001/service?userid=${post.data.UserId}`
            
          
           useEffect(()=>{
@@ -44,7 +45,7 @@ export default function Post(post){
       const likeHandler = ()=>{
         console.log(isliked)
        var a = post.data._id
-        var sat = "http://18.204.18.253:3001/service/Posts/" + a+"/likes"
+        var sat = `${IP}:3001/service/Posts/`+ a +`/likes`
         
           axios.put(sat,{
             "User_Id": user._id

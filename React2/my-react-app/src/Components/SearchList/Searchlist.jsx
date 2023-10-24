@@ -1,8 +1,10 @@
 import "./Searchlist.css"
 import axios from "axios"
+import { Authcontext } from "../../Context/AuthContext"
+import { useContext } from "react"
 export default function  SearchList({friend,user,conversation,states}){
 const b = friend
-
+const {IP} = useContext(Authcontext)
     const a  = {
 
     "Senderid":user._id, 
@@ -23,7 +25,7 @@ const b = friend
           
         if(v){
             console.log("hello..... ")
-            axios.put( "http://18.204.18.253:3001/service/Conversation",a)
+            axios.put( `${IP}3001/service/Conversation`,a)
           }
            
           states(false)

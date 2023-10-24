@@ -6,7 +6,7 @@ import axios from "axios"
 
 
 export default function Share(){
-const {user} = UseContext(Authcontext)
+const {user,IP} = UseContext(Authcontext)
 const[file,setfile]= UseState()
 const input = UseRef()
 const desc = UseRef()
@@ -31,7 +31,7 @@ const sharehandler =async (e) =>{
     
 
     try {
-    const res = await axios.post("http://18.204.18.253:3001/upload",data, { headers: {'Content-Type': 'multipart/form-data'}})
+    const res = await axios.post(`${IP}3001/upload`,data, { headers: {'Content-Type': 'multipart/form-data'}})
       console.log("response",res)
        newPost.img = res.data
        
@@ -46,7 +46,7 @@ const sharehandler =async (e) =>{
   try{
  
    if(file){
-      const res = await axios.post("http://18.204.18.253:3001/service/Posts/",newPost)
+      const res = await axios.post(`${IP}3001/service/Posts/`,newPost)
    }
   
 

@@ -1,11 +1,16 @@
 import "./profilecontainer.css"
 import Feed from "../feed/feed"
 import Rightbar from "../rightbar/rightbar"
-import { useEffect, useState as usestate,useRef as useref} from "react"
+import { useEffect, useState as usestate,useRef as useref,useContext} from "react"
 import axios from "axios"
+import { Authcontext } from "../../Context/AuthContext"
 export default function ProfileContainer({User}){
- console.log("USER:@",User.profilepic)
+   const{user,IP}  = useContext(Authcontext)
+  
 
+ console.log("USER:@",User.profilepic)
+ 
+ console.log("iplop",IP);
  const[propic,setpropic]= usestate()
  
  useEffect(()=>{
@@ -24,9 +29,10 @@ export default function ProfileContainer({User}){
      data.append("filename",filename)
 
      try {
-        const a =  await axios.post("http://18.204.18.253:3001/upload/profile",data, { headers: {'Content-Type': 'multipart/form-data'}})
+        const a =  await axios.post(`${IP}3001/upload/profile`,data, { headers: {'Content-Type': 'multipart/form-data'}})
                    
-                  await axios.put("http://18.204.18.253:3001/service/update/profile",{"user_id":User._id,"profilepic":a.data})
+                  await axios.put(`${IP}3001/service/update/profile`,{"user_id":User._id,"profilepic":a.data})
+                  console.log(a,"aaaaaaaaaaa")
        setpropic(a.data)
     
                 } catch (error) {

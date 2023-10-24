@@ -26,5 +26,3 @@ export default function Messages({own,text,Time,REF,msg}){
     )
 }
 
-/*             </img>
-                */

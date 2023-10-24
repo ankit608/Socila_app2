@@ -1,15 +1,17 @@
 import axios from "axios";
 
-export const Login_CAll = async (usercredentials,dispatch)=>{
+export const Login_CAll = async (usercredentials,dispatch,IP)=>{
+  console.log(IP,"Address")
   dispatch({type:"Login_Start"});
   var res
-  
+  //http://44.202.35.128:
+  //http://44.202.35.128/
   try{
     
-  var st = `http://18.204.18.253:3001/service/login`
+  var st = `${IP}3001/service/login`
 
   
-   res = await axios.post("http://18.204.18.253:3001/service/login",usercredentials) 
+   res = await axios.post(`${IP}3001/service/login`,usercredentials) 
    
    setTimeout(()=>{
     dispatch({type:"LOGIN_SUCCESS", payload:res.data})

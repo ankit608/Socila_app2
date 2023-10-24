@@ -10,12 +10,12 @@ export default function Chat({Currentchat , conversation}){
      const count = 0
      const[Arrivedmsg,setArrivedMessage] = usestate(null)
     const[Msg,setMsg] = usestate([])
-    const {user} = useContext(Authcontext)
+    const {user,IP} = useContext(Authcontext)
     const socket = useRef()
     
    useEffect(()=>{
    if(conversation.length >=1){
-     console.log("count")
+     console.log("count:")
     socket.current = io("ws://18.204.18.253:8890")
    }
    
@@ -58,7 +58,7 @@ export default function Chat({Currentchat , conversation}){
     
     const text_ref = useRef()
     const SaveMessages = async (data)=>{
-       const a =  await axios.post("http://18.204.18.253:3001/service/Conversation",data)
+       const a =  await axios.post(`${IP}3001/service/Conversation`,data)
        console.log(a,"aaaa")
     }
 
@@ -68,7 +68,7 @@ export default function Chat({Currentchat , conversation}){
 
         
         const fetch_messages = async () =>{
-            const  abc = await axios.get("http://18.204.18.253:3001/service/Conversation/conver/"+Currentchat._id)
+            const  abc = await axios.get(`${IP}3001/service/Conversation/conver/`+Currentchat._id)
             console.log("useEffect",Msg.data)
             
             setMsg(abc.data)

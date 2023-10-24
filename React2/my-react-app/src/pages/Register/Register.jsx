@@ -1,11 +1,15 @@
 import { useRef as UseRef, useState as UseState } from "react"
 import { useNavigate as UseNavigate} from "react-router-dom"
-import Register from "../../Register"
+import register from "../../Register"
 import { CircularProgress } from "@material-ui/core"
+import { useContext } from "react"
+import { Authcontext } from "../../Context/AuthContext"
 
 
-export default function register(){
 
+export default function Register(){
+  const {IP} = useContext(Authcontext)
+  console.log("helooooIPPPP",IP)
   const[state,setstate] = UseState()
  const Navigate = UseNavigate()
   const password = UseRef()
@@ -23,7 +27,7 @@ const Email = UseRef()
        setstate("yes")
       
        setTimeout(()=>{
-        const res =   Register(Name.current.value,password.current.value,Email.current.value)
+        const res =   register(Name.current.value,password.current.value,Email.current.value,IP)
           clearTimeout()
          setstate()
 

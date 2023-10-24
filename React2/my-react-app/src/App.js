@@ -1,7 +1,7 @@
  
  import Home from "./pages/Home/Home"
 import Login from "./pages/Login/Login"
-import Profile  from "./pages/profile/profile"
+import Profile  from "./pages/profile/Profile"
 import Register from "./pages/Register/Register"
 import { BrowserRouter as Router
  , Switch , Route ,Routes, Navigate}from "react-router-dom"

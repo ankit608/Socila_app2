@@ -1,10 +1,12 @@
 import axios from "axios"
-import { useEffect , useState as usestate} from "react"
+import { useEffect , useState as usestate, useContext as useContext} from "react"
+import { Authcontext } from "../../Context/AuthContext"
 
 
 export default function Conversation({chatHandler, conversation , currentuser}){
 
       console.log(conversation,"con")
+      const {IP} = useContext(Authcontext)
       const[friend,setfriend] = usestate(null)
     useEffect(()=>{
 
@@ -15,7 +17,7 @@ export default function Conversation({chatHandler, conversation , currentuser}){
         
         
         const getUser = async () =>{
-         const friend = await axios.get("http://18.204.18.253:3001/service?userid="+userFriend)
+         const friend = await axios.get(`${IP}3001/service?userid=`+userFriend)
          console.log("friend",friend.data)
          setfriend(friend.data)
         }

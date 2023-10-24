@@ -6,18 +6,21 @@ import axios from "axios"
 import { Link } from 'react-router-dom'
 import { useState as usestate ,useContext as usecontext} from "react"
 import { Add } from "@material-ui/icons"
-
+//import { Authcontext } from "../../Context/AuthContext"
 
 export default  function Rightbar( {User}){
+  
+  
   const PRO = ()=>{
-
+      
+    const {user,IP} =  usecontext(Authcontext)
      
      const [Isfollowed,setIsfollowed] = usestate(false)
-
+     
     const followhandler = async ()=>{
       
       console.log("Usersss:",User.User)
-      const a = await axios.put(`http://18.204.18.253:3001/service/${User._id}/follow`,{id:user._id})
+      const a = await axios.put(`${IP}3001/service/${User._id}/follow`,{id:user._id})
        
       setIsfollowed(!Isfollowed)
 
@@ -26,7 +29,7 @@ export default  function Rightbar( {User}){
     
   const count=0
    const[data,setData] = usestate([])
-    const {user} =  usecontext(Authcontext)
+
     console.log("user:",user)
     
   useEffect(()=>{
@@ -36,7 +39,7 @@ export default  function Rightbar( {User}){
           
 
           setIsfollowed(User.following.includes(user._id))
-          const a = await axios.get(`http://18.204.18.253:3001/service/${User._id}/followers`)
+          const a = await axios.get(`${IP}3001/service/${User._id}/followers`)
            console.log("aaa" +" "+User.User,a)
            console.log("Usersss:",User)
           setData(a.data)

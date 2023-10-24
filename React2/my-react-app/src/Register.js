@@ -1,12 +1,14 @@
 import axios from "axios"
 
 
-const Register = async (name,password,Email)=>{
+const register = async (name,password,Email,IP)=>{
    
+    
 
    try{
       
-     const res = await axios.post("http://18.204.18.253:3001/service/register",{"Email":Email,"password":password,"User":name})
+    console.log("gfgfgf",IP)
+     const res = await axios.post(`${IP}3001/service/register`,{"Email":Email,"password":password,"User":name})
      
 
     }catch(error){
@@ -16,4 +18,4 @@ const Register = async (name,password,Email)=>{
     }
 }
 
-export default Register
+export default register

@@ -6,6 +6,7 @@ const Initial_state = {
     user: null,
     Isfetching:false,
     error:false,
+    address:"http://44.202.35.128:",
 
 
 };
@@ -14,7 +15,7 @@ export const Authcontext  =  createContext()
 export const AuthContextProvider = ({children})=>{
  
     const[state,dispatch] = useReducer(AuthReducer,Initial_state)
-     console.log("sateeee",state)
+    
     return(
 
         <Authcontext.Provider value={
@@ -22,7 +23,7 @@ export const AuthContextProvider = ({children})=>{
                 user:state.user, 
                 Isfetching: state.Isfetching,
                  error:state.error , 
-                 
+                 IP: state.address,
                  dispatch
                 }
         }

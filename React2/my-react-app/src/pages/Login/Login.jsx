@@ -6,13 +6,13 @@ import { CircularProgress } from "@material-ui/core"
 import {Link, useNavigate} from "react-router-dom"
 export default function Login(){
 
-  const{user,Isfetching,error, dispatch}  = useContext(Authcontext)
+  const{user,Isfetching,error, IP, dispatch}  = useContext(Authcontext)
   const Navigate = useNavigate()
   const password = useRef()
   const Email =  useRef()
 const handleClick = (e)=>{
    e.preventDefault()
-   Login_CAll({email:Email.current.value, password:password.current.value},dispatch)
+   Login_CAll({email:Email.current.value, password:password.current.value},dispatch,IP)
 }
 
     return(
