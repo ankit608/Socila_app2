@@ -6,7 +6,7 @@ const Initial_state = {
     user: null,
     Isfetching:false,
     error:false,
-    address:"http://44.202.35.128:",
+    address:"http://34.227.28.205:",
 
 
 };
