@@ -16,7 +16,7 @@ export default function Chat({Currentchat , conversation}){
    useEffect(()=>{
    if(conversation.length >=1){
      console.log("count:")
-    socket.current = io(`ws://${IP}:8890`)
+    socket.current = io(`ws://${IP}8890`)
    }
    
   
